@@ -6,9 +6,8 @@ import tornado.web
 
 class MainHandler(tornado.web.RequestHandler):
     """
-
+    MainHandler make default response to user's request.
     """
-
     def data_received(self, chunk: bytes) -> Optional[Awaitable[None]]:
         pass
 
