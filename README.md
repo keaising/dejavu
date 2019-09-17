@@ -41,3 +41,13 @@ I've seen this before.
 
 6. 做好依赖管理
 
+---------------------------------------
+
+开发情况
+
+- [x] Git 管理
+- [x] 使用 Tornado 作为应用框架
+- [x] 符合 PEP-8（Makefile 使用 pycodestyle 做 lint）
+- [ ] SQLAlchemy 作为 ORM
+- [ ] 接口实现
+
