@@ -1,7 +1,6 @@
-.PHONY: all
+.PHONY: all lint
 all: lint
 
-.PHONY: lint
 lint:
-	@pycodestyle --show-source --exclude=venv .
+	pycodestyle --show-source --exclude=venv .
 
