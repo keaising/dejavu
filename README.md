@@ -4,6 +4,8 @@ The homework from dejavu.
 
 I've seen this before.
 
+[![Build Status](https://travis-ci.org/keaising/dejavu.svg?branch=master)](https://travis-ci.org/keaising/dejavu)
+
 ---------------------------------------
 
 总需求 实现书店系统必要的 API
