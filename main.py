@@ -2,26 +2,24 @@ from typing import Optional, Awaitable
 
 import tornado.ioloop
 import tornado.web
+from sqlalchemy import create_engine
+from sqlalchemy.orm import scoped_session, sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
+from handler.base import MainHandler
+
+Base = declarative_base()
+# engine = create_engine()
 
 
-class MainHandler(tornado.web.RequestHandler):
-    """
-    MainHandler make default response to user's request.
-    """
-    def data_received(self, chunk: bytes) -> Optional[Awaitable[None]]:
-        pass
-
-    def get(self):
-        self.write("Hello, world")
-
-
-def make_app():
-    return tornado.web.Application([
-        (r"/", MainHandler),
-    ])
+class Application(tornado.web.Application):
+    def __init__(self):
+        handlers = [(r"/", MainHandler)]
+        settings = dict(
+            debug=True,
+        )
+        tornado.web.Application.__init__(self, handlers, **settings)
 
 
 if __name__ == "__main__":
-    app = make_app()
-    app.listen(8888)
+    Application().listen(8888)
     tornado.ioloop.IOLoop.current().start()
