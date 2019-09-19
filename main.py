@@ -14,9 +14,7 @@ Base = declarative_base()
 class Application(tornado.web.Application):
     def __init__(self):
         handlers = [(r"/", MainHandler)]
-        settings = dict(
-            debug=True,
-        )
+        settings = dict(debug=True)
         tornado.web.Application.__init__(self, handlers, **settings)
 
 
