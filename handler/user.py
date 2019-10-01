@@ -6,7 +6,6 @@ class UserHandler(BaseHandler):
     """用户管理相关接口"""
 
     def get(self):
-
         # self.execute(
         #     "INSERT INTO users \
         # (user_id, pswd_hash, salt, create_time, valid) \

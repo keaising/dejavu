@@ -1,12 +1,8 @@
 import tornado.ioloop
 import tornado.web
-from sqlalchemy import create_engine
-from sqlalchemy.orm import scoped_session, sessionmaker
-from sqlalchemy.ext.declarative import declarative_base
 from handler.base import MainHandler
 from dal.base import init_db, engine
 from sqlalchemy.orm import scoped_session, sessionmaker
-from tornado.options import define, options
 from handler.user import UserHandler
 
 
