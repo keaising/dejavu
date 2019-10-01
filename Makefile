@@ -5,5 +5,5 @@ lint:
 	pycodestyle --show-source --exclude=venv .
 
 fmt:
-	black handler main.py
+	black handler dal model main.py
 
