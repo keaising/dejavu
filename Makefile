@@ -5,5 +5,5 @@ lint:
 	pycodestyle --exclude=venv .
 
 fmt:
-	black handler dal model -l 80
+	black . -l 80 --exclude=venv
 

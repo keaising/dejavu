@@ -2,7 +2,7 @@ import hashlib
 import random
 import string
 
-secret_key = 'key'
+secret_key = "key"
 
 
 def generate_random_string(length=10):
@@ -13,7 +13,7 @@ def generate_random_string(length=10):
 
 def encrypt_password(password, salt):
     """encrypt user's password."""
-    return hash_md5(password+salt+secret_key)
+    return hash_md5(password + salt + secret_key)
 
 
 def is_right_password(input_password, salt, encrypted_password):

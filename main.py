@@ -11,7 +11,7 @@ class Application(tornado.web.Application):
         handlers = [
             (r"/", MainHandler),
             (r"/user/signup", SignupHandler),
-            (r'/user/login', LoginHandler)
+            (r"/user/login", LoginHandler),
         ]
         settings = dict(debug=True)
         tornado.web.Application.__init__(self, handlers, **settings)
