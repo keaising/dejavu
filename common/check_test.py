@@ -7,7 +7,7 @@ def test_check_password():
         {"name": "2", "input": "wsx12333", "expect": False},
         {"name": "3", "input": "wsx12333ssss", "expect": False},
         {"name": "4", "input": "wsx123AA", "expect": True},
-        {"name": "5", "input": "wsx12AA", "expect": True},
+        {"name": "5", "input": "wsx12AA", "expect": False},
         {"name": "6", "input": "wsx123Z*", "expect": True},
         {"name": "7", "input": "wsx123AA*&^%$#", "expect": True},
         {"name": "8", "input": "wsx123AAfajsdf", "expect": True},

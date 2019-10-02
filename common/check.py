@@ -12,12 +12,12 @@ def check_password(s):
     """To check a password is properly or not.
 
     密码必须符合以下规则
-    1.长度 > 2
+    1.长度 >= 8
     2.包含数字、大写字母、小写字母以及特殊符号中的至少3种
     3.不能包含支持的字符以外的字符
     """
     s = s.strip()
-    a = len(s)
+    a = len(s) >= 8
     b1 = re.findall(r"\d", s)
     b2 = re.findall(r"[A-Z]", s)
     b3 = re.findall(r"[a-z]", s)
