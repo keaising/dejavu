@@ -11,6 +11,7 @@ def test_check_password():
         {"name": "6", "input": "wsx123Z*", "expect": True},
         {"name": "7", "input": "wsx123AA*&^%$#", "expect": True},
         {"name": "8", "input": "wsx123AAfajsdf", "expect": True},
+        {"name": "9", "input": "wsx123 AAfajsdf", "expect": False},
     ]
     for case in test_cases:
         assert check_password(case["input"]) == case["expect"], case["name"]
@@ -28,6 +29,7 @@ def test_check_mobile():
         {"name": "8", "input": "17811114444", "expect": True},
         {"name": "9", "input": "18811114444", "expect": True},
         {"name": "10", "input": "19811114444", "expect": True},
+        {"name": "11", "input": "19811 14444", "expect": False},
     ]
     for case in test_cases:
         assert check_mobile(case["input"]) == case["expect"], case["name"]
