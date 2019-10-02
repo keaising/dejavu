@@ -24,8 +24,8 @@ class SignupHandler(BaseHandler, ABC):
 
 
 def get_params(self):
-    mobile = self.get_body_argument("mobile")
-    password = self.get_body_argument("password")
+    mobile = self.get_body_argument("mobile").strip()
+    password = self.get_body_argument("password").strip()
     return mobile, password
 
 

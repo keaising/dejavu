@@ -16,7 +16,6 @@ def check_password(s):
     2.包含数字、大写字母、小写字母以及特殊符号中的至少3种
     3.不能包含支持的字符以外的字符
     """
-    s = s.strip()
     a = len(s) >= 8
     b1 = re.findall(r"\d", s)
     b2 = re.findall(r"[A-Z]", s)
