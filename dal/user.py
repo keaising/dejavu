@@ -1,16 +1,15 @@
-from model import user
+from model.account import AccountModel
 from dal.base import create, get_one, get_all
 
 
-class UserManager:
-    @classmethod
-    def create_user(cls, s, **kw):
-        return create(s, user.UserModel, **kw)
+def create_account(s, account_model):
+    return create(s, account_model)
 
-    @classmethod
-    def get_user(cls, **kw):
-        return get_one(**kw)
 
-    @classmethod
-    def get_users(cls, **kw):
-        return get_all(**kw)
+def get_account(**kw):
+    print(**kw)
+    return get_one(AccountModel, **kw)
+
+
+def get_accounts(**kw):
+    return get_all(AccountModel, **kw)

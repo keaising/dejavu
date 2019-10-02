@@ -1,31 +1,35 @@
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker, scoped_session
 
 engine = create_engine("sqlite:///:memory:", echo=True)
-base_db = declarative_base()
+Session = scoped_session(sessionmaker(bind=engine))
+
+Base = declarative_base()
 
 
-def create(s, model_cls, **kw):
-    model = model_cls(**kw)
+def init_db():
+    Base.metadata.create_all(engine)
+
+
+def create(s, model):
     s.add(model)
     s.commit()
     return model
 
 
-def get_one(cls, model_cls, **kw):
-    return model_cls.query.filter_by(**kw).first()
+def get_one(s, Model, **kw):
+    return s.query(Model).filter_by(**kw).first()
 
 
-def get_all(cls, model_cls, **kw):
+def get_all(model_cls, **kw):
     return model_cls.query.fitler_by(**kw)
 
 
-def delete(cls, s, model):
+def delete(s, model):
     model.delete()
     s.commit()
     return True
 
 
-def init_db():
-    base_db.metadata.create_all(engine)
-    print("init db!")
+
