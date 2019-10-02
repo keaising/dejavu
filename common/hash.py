@@ -1,5 +1,6 @@
-import string, random, hashlib
-
+import hashlib
+import random
+import string
 
 secret_key = 'key'
 

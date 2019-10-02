@@ -30,6 +30,3 @@ def delete(s, model):
     model.delete()
     s.commit()
     return True
-
-
-

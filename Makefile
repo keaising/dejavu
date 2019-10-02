@@ -2,8 +2,8 @@
 all: lint
 
 lint:
-	pycodestyle --show-source --exclude=venv .
+	pycodestyle --exclude=venv .
 
 fmt:
-	black handler dal model
+	black handler dal model -l 80
 

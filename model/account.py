@@ -20,4 +20,7 @@ class AccountModel(Base):
         self.password = encrypt_password(password, self.salt)
 
     def __repr__(self):
-        return "<User(mobile='%s', username='%s')>" % (self.mobile, self.username)
+        return "<User(mobile='%s', username='%s')>" % (
+            self.mobile,
+            self.username,
+        )

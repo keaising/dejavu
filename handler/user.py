@@ -30,9 +30,7 @@ def get_params(self):
 
 
 def exist(session, mobile):
-    account = session.query(AccountModel)\
-        .filter_by(mobile = mobile)\
-        .first()
+    account = session.query(AccountModel).filter_by(mobile=mobile).first()
     # get_account(["mobile", mobile])
     return False if account is None else True
 
@@ -42,13 +40,13 @@ class LoginHandler(BaseHandler, ABC):
         try:
             s = Session()
             mobile, password = get_params(self)
-            account = s.query(AccountModel)\
-                .filter_by(mobile = mobile)\
-                .first()
+            account = s.query(AccountModel).filter_by(mobile=mobile).first()
             if account is None:
                 self.write("mobile not exist.")
 
-            is_right = is_right_password(password, account.salt, account.password)
+            is_right = is_right_password(
+                password, account.salt, account.password
+            )
             if not is_right:
                 self.write("password not correct!")
 
