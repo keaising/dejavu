@@ -19,4 +19,8 @@ class Application(tornado.web.Application):
 
 if __name__ == "__main__":
     Application().listen(8888)
-    tornado.ioloop.IOLoop.current().start()
+    try:
+        tornado.ioloop.IOLoop.current().start()
+    except KeyboardInterrupt:
+        tornado.ioloop.IOLoop.current().stop()
+        print("Tonardo Exit.")
