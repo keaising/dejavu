@@ -3,6 +3,8 @@ import unittest
 from tornado.testing import AsyncHTTPTestCase
 from tornado.web import Application
 from src.main import make_app
+from src.dal.base import Session
+from src.model.account import AccountModel
 
 
 class AccountHandlerTest(AsyncHTTPTestCase):
@@ -13,6 +15,28 @@ class AccountHandlerTest(AsyncHTTPTestCase):
     def get_app(self) -> Application:
         # get_app is the hook that Tornado Test uses to get app under test
         return make_app()
+
+    # def before_test(self):
+    #     """Add some test data to db.
+    #     :return:
+    #     """
+    #     s = Session()
+    #     s.add(
+    #         AccountModel(mobile="15810635978", username="", password="123456")
+    #     )
+    #     s.commit()
+    #
+    # def test_login_handler(self):
+    #     self.before_test()
+    #     r = self.fetch(
+    #         r"/user/login",
+    #         method="POST",
+    #         headers=None,
+    #         body="mobile=15810635978&password=123456",
+    #     )
+    #     data = json.loads(r.body)
+    #     self.assertEqual(data["msg"], "")
+    #     self.assertEqual(r.code, 200)
 
     def test_signup_handler(self):
         r = self.fetch(
