@@ -6,6 +6,8 @@ I've seen this before.
 
 [![Build Status](https://travis-ci.org/keaising/dejavu.svg?branch=master)](https://travis-ci.org/keaising/dejavu)
 
+![](https://github.com/keaising/dejavu/workflows/dejavu/badge.svg)
+
 ---------------------------------------
 
 总需求 实现书店系统必要的 API
