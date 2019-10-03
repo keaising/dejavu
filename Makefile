@@ -9,4 +9,3 @@ test:
 
 fmt:
 	black . -l 80 --exclude=venv
-
