@@ -4,8 +4,7 @@ The homework from dejavu.
 
 I've seen this before.
 
-[![Build Status](https://travis-ci.org/keaising/dejavu.svg?branch=master)](https://travis-ci.org/keaising/dejavu)  
-![](https://github.com/keaising/dejavu/workflows/dejavu/badge.svg)
+[![Build Status](https://travis-ci.org/keaising/dejavu.svg?branch=master)](https://travis-ci.org/keaising/dejavu)  ![](https://github.com/keaising/dejavu/workflows/dejavu/badge.svg)
 
 ---------------------------------------
 
