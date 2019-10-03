@@ -1,24 +1,25 @@
 import tornado.ioloop
-import tornado.web
+from tornado.web import Application
 from src.handler.base import MainHandler
 from src.handler.user import SignupHandler, LoginHandler
 from src.dal.base import init_db
 
 
-class Application(tornado.web.Application):
-    def __init__(self):
-        init_db()
-        handlers = [
+def make_app() -> Application:
+    init_db()
+    return Application(
+        handlers=[
             (r"/", MainHandler),
             (r"/user/signup", SignupHandler),
             (r"/user/login", LoginHandler),
-        ]
-        settings = dict(debug=True)
-        tornado.web.Application.__init__(self, handlers, **settings)
+        ],
+        settings=dict(debug=True),
+    )
 
 
 if __name__ == "__main__":
-    Application().listen(8888)
+    app = make_app()
+    app.listen(8888)
     try:
         tornado.ioloop.IOLoop.current().start()
     except KeyboardInterrupt:

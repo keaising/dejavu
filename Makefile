@@ -5,7 +5,7 @@ lint:
 	pycodestyle --exclude=venv .
 
 test:
-	python -m pytest
+	python -m pytest test
 
 fmt:
 	black . -l 80 --exclude=venv
