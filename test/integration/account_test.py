@@ -22,9 +22,8 @@ class AccountHandlerTest(AsyncHTTPTestCase):
             body="mobile=15810635978&password=123456",
         )
         data = json.loads(r.body)
-        self.assertEqual(data["msg"], '')
+        self.assertEqual(data["msg"], "")
         self.assertEqual(r.code, 200)
-
 
 
 if __name__ == "__main__":
