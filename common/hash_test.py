@@ -66,3 +66,69 @@ def test_encrypt_password():
         assert (
             encrypt_password(case["input"], case["salt"]) == case["expect"]
         ), case["name"]
+
+
+def test_is_right_password():
+    test_cases = [
+        {
+            "name": "1",
+            "input": "wsx123",
+            "salt": "False",
+            "md5": "cfbfb0216a2ab50f996ed363346b52b1",
+            "expect": True,
+        },
+        {
+            "name": "2",
+            "input": "wsx12333",
+            "salt": "False",
+            "md5": "d97f164138560ec11d307ad5f9d8e961",
+            "expect": True,
+        },
+        {
+            "name": "3",
+            "input": "wsx12333ssss",
+            "salt": "False",
+            "md5": "8b7f09237afb635543ab48593a48f6db",
+            "expect": True,
+        },
+        {
+            "name": "4",
+            "input": "wsx123AA",
+            "salt": "True",
+            "md5": "0c6b3ab8cc1ac2893ac42f930b290edc",
+            "expect": True,
+        },
+        {
+            "name": "5",
+            "input": "wsx12AA",
+            "salt": "True",
+            "md5": "cae0de93a2bcc8cd304813671ca220",
+            "expect": False,
+        },
+        {
+            "name": "6",
+            "input": "wsx123Z*",
+            "salt": "True",
+            "md5": "580441c232a6ec99c70d79646e946052",
+            "expect": False,
+        },
+        {
+            "name": "7",
+            "input": "wsx123AA*&^%$#",
+            "salt": "True",
+            "md5": "4740f156aad9ff09dd7f7ea75dc38a6f",
+            "expect": False,
+        },
+        {
+            "name": "8",
+            "input": "wsx123AAfajsdf",
+            "salt": "True",
+            "md5": "9fca8abf110b   c583bef51a2683ec250f",
+            "expect": False,
+        },
+    ]
+    for case in test_cases:
+        assert (
+            is_right_password(case["input"], case["salt"], case["md5"])
+            == case["expect"]
+        ), case["name"]
