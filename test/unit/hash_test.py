@@ -1,4 +1,4 @@
-from common.hash import (
+from src.common.hash import (
     generate_random_string,
     encrypt_password,
     is_right_password,

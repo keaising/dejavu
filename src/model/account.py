@@ -1,8 +1,7 @@
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
-from common.hash import generate_random_string, encrypt_password
+from src.common.hash import generate_random_string, encrypt_password
 
-from dal.base import Base
+from src.dal.base import Base
 
 
 class AccountModel(Base):

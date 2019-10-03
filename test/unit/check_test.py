@@ -1,4 +1,4 @@
-from common.check import check_password, check_mobile
+from src.common.check import check_password, check_mobile
 
 
 def test_check_password():

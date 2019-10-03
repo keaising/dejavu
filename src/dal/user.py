@@ -1,4 +1,4 @@
-from model.account import AccountModel
+from src.model.account import AccountModel
 
 
 def create_account(session, account_model):

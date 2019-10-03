@@ -1,11 +1,11 @@
 from abc import ABC
 
-from model.account import AccountModel
-from handler.base import BaseHandler
-from common.hash import is_right_password
-from dal.user import create_account, get_account_by_mobile
-from dal.base import Session
-from model.result import Result
+from src.model.account import AccountModel
+from src.handler.base import BaseHandler
+from src.common.hash import is_right_password
+from src.dal.user import create_account, get_account_by_mobile
+from src.dal.base import Session
+from src.model.result import Result
 import logging
 
 
@@ -55,9 +55,9 @@ class LoginHandler(BaseHandler, ABC):
                 return
 
             # 可以再做一个全局dict维护登陆状态并用guid代替mobile，提高速度和安全性
-            self.set_secure_cookie('dejavu_user', mobile)
+            self.set_secure_cookie("dejavu_user", mobile)
             self.redirect(self.get_argument("next", "/"))
 
         except Exception as ex:
-            logging.exception('login error!', exc_info=True)
-            self.write(Result.error('Some error, please try latter.'))
+            logging.exception("login error!", exc_info=True)
+            self.write(Result.error("Some error, please try latter."))

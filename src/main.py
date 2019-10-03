@@ -1,8 +1,8 @@
 import tornado.ioloop
 import tornado.web
-from handler.base import MainHandler
-from handler.user import SignupHandler, LoginHandler
-from dal.base import init_db
+from src.handler.base import MainHandler
+from src.handler.user import SignupHandler, LoginHandler
+from src.dal.base import init_db
 
 
 class Application(tornado.web.Application):
