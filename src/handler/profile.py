@@ -1,14 +1,21 @@
+import logging
+from tornado.web import authenticated
 from src.model.profile import ProfileModel
 from src.handler.base import BaseHandler
 from src.common.hash import is_right_password
-from src.dal.profile import create_profile, get_profile_by_mobile
+from src.dal.profile import (
+    create_profile,
+    get_profile_by_mobile,
+    get_info_by_mobile,
+)
 from src.dal.base import Session
 from src.model.result import Result
 from src.common.hash import generate_random_string, encrypt_password
-import logging
 
 
 class SignupHandler(BaseHandler):
+    """用户注册"""
+
     def post(self):
         try:
             s = Session()
@@ -30,6 +37,8 @@ class SignupHandler(BaseHandler):
 
 
 class LoginHandler(BaseHandler):
+    """用户登录"""
+
     def post(self):
         try:
             s = Session()
@@ -55,7 +64,23 @@ class LoginHandler(BaseHandler):
             self.response(Result.error("Some error, please try later."))
 
 
+class QueryUserInfoHandler(BaseHandler):
+    """查询用户个人信息"""
+
+    @authenticated
+    def get(self):
+        try:
+            mobile = self.get_current_user()
+            s = Session()
+            info = get_info_by_mobile(mobile)
+            self.response(Result.success(info))
+        except Exception as ex:
+            logging.exception("query info error!", exc_info=True)
+            self.response(Result.error("query info error."))
+
+
 def get_params(self) -> ProfileModel:
+    """从请求中获取用户参数"""
     mobile = self.get_body_argument("mobile")
     password = self.get_body_argument("password")
     username = self.get_body_argument("username", "")
@@ -68,5 +93,6 @@ def get_params(self) -> ProfileModel:
 
 
 def exist(s, mobile):
+    """判断手机号是否已存在"""
     account = get_profile_by_mobile(s, mobile)
     return False if account is None else True
