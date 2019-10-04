@@ -5,15 +5,15 @@ from tornado.httpclient import HTTPClientError
 from tornado.web import Application
 from src.main import make_app
 from src.dal.base import Session
-from src.model.account import AccountModel
+from src.model.profile import ProfileModel
 
 
 @pytest.fixture(scope="session")
 def add_account_data() -> None:
     super().setUp()
-    s = Session()
-    s.add(AccountModel(mobile="15810635978", username="", password="123456"))
-    s.commit()
+    # s = Session()
+    # s.add(ProfileModel(mobile="15810635978", username="", password="123456"))
+    # s.commit()
 
 
 @pytest.fixture(scope="session")
@@ -90,5 +90,5 @@ async def test_login_handler(http_server_client):
             logging.error(r, exc_info=True)
             assert r.code == case["code"]
         except Exception as ex:
-            assert 1 == 0
             logging.error(ex, exc_info=True)
+            assert 1 == 0

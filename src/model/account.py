@@ -5,21 +5,22 @@ from src.dal.base import Base
 
 
 class AccountModel(Base):
-    __tablename__ = "account"
+    """
+    用户账户，跟用户的一般信息分开，方便后期扩展账户领域
+    """
 
-    mobile = Column(Integer, primary_key=True)
-    username = Column(String)
-    salt = Column(String)
-    password = Column(String)
+    __tablename__ = "profile"
 
-    def __init__(self, mobile, username, password):
+    # 跟Profile一样用手机号作主键
+    mobile = Column(String, primary_key=True)
+    # 余额
+    surplus = Column(String)
+
+    def __init__(self, mobile, surplus=0):
         self.mobile = mobile
-        self.username = username
-        self.salt = generate_random_string()
-        self.password = encrypt_password(password, self.salt)
+        self.surplus = surplus
 
     def __repr__(self):
-        return "<User(mobile='%s', username='%s')>" % (
-            self.mobile,
-            self.username,
+        return "<Account(mobile='{}', surplus='{}')>".format(
+            self.mobile, self.surplus
         )
