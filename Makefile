@@ -2,7 +2,7 @@
 all: lint test
 
 lint:
-	pycodestyle --exclude=venv .
+	pycodestyle --exclude=venv . --max-line-length=80
 
 test:
 	python -m pytest test
