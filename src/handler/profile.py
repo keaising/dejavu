@@ -1,4 +1,3 @@
-from abc import ABC
 from src.model.profile import ProfileModel
 from src.handler.base import BaseHandler
 from src.common.hash import is_right_password
@@ -9,7 +8,7 @@ from src.common.hash import generate_random_string, encrypt_password
 import logging
 
 
-class SignupHandler(BaseHandler, ABC):
+class SignupHandler(BaseHandler):
     def post(self):
         try:
             s = Session()
@@ -30,7 +29,7 @@ class SignupHandler(BaseHandler, ABC):
             self.response(Result.error("SignUp error."))
 
 
-class LoginHandler(BaseHandler, ABC):
+class LoginHandler(BaseHandler):
     def post(self):
         try:
             s = Session()
