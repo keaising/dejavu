@@ -57,8 +57,7 @@ class LoginHandler(BaseHandler, ABC):
 
             # 可以再做一个全局dict维护登陆状态并用guid代替mobile，提高速度和安全性
             self.set_secure_cookie("dejavu_user", mobile)
-            self.redirect(self.get_argument("next", "/"))
-
+            self.response(Result.success("success"))
         except Exception as ex:
             logging.exception("login error!", exc_info=True)
             self.response(Result.error("Some error, please try later."))

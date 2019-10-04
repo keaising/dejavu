@@ -25,16 +25,34 @@ def app() -> Application:
 
 
 async def test_signup_handler(http_server_client):
-    r = await http_server_client.fetch(
-        "/user/signup",
-        method="POST",
-        headers=None,
-        body="mobile=15810635978&password=123456",
-    )
-    assert r.code == 200
-    data = json.loads(r.body)
-    assert data["msg"] == "success"
-    assert data["code"] == 200
+    test_cases = [
+        {
+            "body": "mobile=15810635978&password=123456",
+            "msg": "success",
+            "code": 200,
+        },
+        {
+            "body": "mobile=15810635978&password=123456",
+            "msg": "mobile has been used.",
+            "code": 400,
+        },
+    ]
+
+    for case in test_cases:
+        r = None
+        try:
+            r = await http_server_client.fetch(
+                "/user/signup",
+                method="POST",
+                headers=None,
+                body="mobile=15810635978&password=123456",
+            )
+            assert r.code == 200
+            data = json.loads(r.body)
+            assert data["msg"] == case["msg"]
+            assert data["code"] == case["code"]
+        except Exception:
+            assert 1 == 0
 
 
 async def test_login_handler(http_server_client):
@@ -49,9 +67,14 @@ async def test_login_handler(http_server_client):
             "msg": "password not correct!",
             "code": 400,
         },
-        {"body": "mobile=15810635978&password=123456", "msg": "", "code": 200},
+        {
+            "body": "mobile=15810635978&password=123456",
+            "msg": "success",
+            "code": 200,
+        },
     ]
     for case in test_cases:
+        r = None
         try:
             r = await http_server_client.fetch(
                 "/user/login",
