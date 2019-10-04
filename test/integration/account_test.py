@@ -1,6 +1,5 @@
 import json
 import logging
-
 import pytest
 from tornado.httpclient import HTTPClientError
 from tornado.web import Application
