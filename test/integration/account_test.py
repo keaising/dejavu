@@ -1,5 +1,5 @@
 import json
-import unittest
+import pytest
 from tornado.testing import AsyncHTTPTestCase
 from tornado.web import Application
 from src.main import make_app
@@ -7,48 +7,42 @@ from src.dal.base import Session
 from src.model.account import AccountModel
 
 
-class AccountHandlerTest(AsyncHTTPTestCase):
-    def setUp(self) -> None:
-        super().setUp()
-        self.headers = {"Content-Type": "application/json; charset=UTF-8"}
-
-    def get_app(self) -> Application:
-        # get_app is the hook that Tornado Test uses to get app under test
-        return make_app()
-
-    # def before_test(self):
-    #     """Add some test data to db.
-    #     :return:
-    #     """
-    #     s = Session()
-    #     s.add(
-    #         AccountModel(mobile="15810635978", username="", password="123456")
-    #     )
-    #     s.commit()
-    #
-    # def test_login_handler(self):
-    #     self.before_test()
-    #     r = self.fetch(
-    #         r"/user/login",
-    #         method="POST",
-    #         headers=None,
-    #         body="mobile=15810635978&password=123456",
-    #     )
-    #     data = json.loads(r.body)
-    #     self.assertEqual(data["msg"], "")
-    #     self.assertEqual(r.code, 200)
-
-    def test_signup_handler(self):
-        r = self.fetch(
-            r"/user/signup",
-            method="POST",
-            headers=None,
-            body="mobile=15810635978&password=123456",
-        )
-        data = json.loads(r.body)
-        self.assertEqual(data["msg"], "")
-        self.assertEqual(r.code, 200)
+@pytest.fixture(scope="session")
+def add_account_data() -> None:
+    super().setUp()
+    s = Session()
+    s.add(AccountModel(mobile="15810635978", username="", password="123456"))
+    s.commit()
 
 
-if __name__ == "__main__":
-    unittest.main()
+@pytest.fixture(scope="session")
+def app() -> Application:
+    # app is the hook that Tornado Test uses to get app under test
+    app = make_app()
+    return app
+
+
+async def test_login_handler(http_server_client):
+    r = await http_server_client.fetch(
+        "/user/login",
+        method="POST",
+        headers=None,
+        body="mobile=13312344321&password=123456",
+    )
+    data = json.loads(r.body)
+    assert r.code == 200
+    assert data["msg"] == "Mobile not find"
+    assert data["code"] == 400
+
+
+async def test_signup_handler(http_server_client):
+    r = await http_server_client.fetch(
+        "/user/signup",
+        method="POST",
+        headers=None,
+        body="mobile=13312344321&password=123456",
+    )
+    assert r.code == 200
+    data = json.loads(r.body)
+    assert data["msg"] == "success"
+    assert data["code"] == 200

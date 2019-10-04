@@ -1,6 +1,7 @@
 import logging
 import json
 from tornado.web import RequestHandler
+from src.model.result import Result
 
 
 class BaseHandler(RequestHandler):
@@ -22,12 +23,12 @@ class BaseHandler(RequestHandler):
 
     def response(self, result=None):
         data = {"code": 200, "msg": ""}
+        # 测试框架限制，所有http_status_code=200，具体业务的值只在data.code中体现
         status_code = 200
         if result is not None:
             data["code"] = result.code
             data["msg"] = result.msg
             data["data"] = result.data
-            status_code = result.code
 
         content = json.dumps(data)
         self.set_status(status_code)
@@ -36,5 +37,7 @@ class BaseHandler(RequestHandler):
 
 
 class MainHandler(BaseHandler):
+    """实现一个测试Handler"""
+
     def get(self):
-        self.write("Hello, world")
+        self.response(Result.success(s="Hello, world"))

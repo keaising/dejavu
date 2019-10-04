@@ -11,3 +11,7 @@ class Result:
     @classmethod
     def success(cls, data):
         return Result(data)
+
+    @classmethod
+    def success(cls, s: str):
+        return Result(None, 200, s)
