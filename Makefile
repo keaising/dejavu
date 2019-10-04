@@ -9,3 +9,6 @@ test:
 
 fmt:
 	black . -l 80 --exclude=venv
+
+require:
+	pip freeze > requirements.txt
