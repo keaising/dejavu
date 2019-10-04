@@ -5,15 +5,16 @@ from src.handler.user import SignupHandler, LoginHandler
 from src.dal.base import init_db
 
 
-def make_app() -> Application:
+def make_app(debug=True, cookie_secret="233") -> Application:
     init_db()
+    settings = {"debug": debug, "cookie_secret": cookie_secret}
     return Application(
         handlers=[
             (r"/", MainHandler),
             (r"/user/signup", SignupHandler),
             (r"/user/login", LoginHandler),
         ],
-        settings=dict(debug=True),
+        **settings
     )
 
 
