@@ -12,6 +12,6 @@ writer.value_matrix = [
     ["whats_up", "string", "whats_up", False],
 ]
 
-with open("./docs/table/user.md", "w") as f:
+with open("./docs/table/user.rst", "w") as f:
     writer.stream = f
     writer.write_table()

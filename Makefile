@@ -1,6 +1,6 @@
 .PHONY: all lint test docs
 all: lint test docs
-gen: fmt docs
+gen: fmt table docs
 
 lint:
 	pycodestyle --exclude=venv . --max-line-length=80

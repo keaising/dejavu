@@ -1,4 +1,4 @@
-.. table:: params list
+.. table:: 
 
     +----------+------+------------+------------+
     |   name   | type |    e.g.    |is_necessary|
@@ -9,9 +9,9 @@
     +----------+------+------------+------------+
     |username  |string|user_name   |False       |
     +----------+------+------------+------------+
-    |nick_name |string|nick_name   |True        |
+    |nick_name |string|nick_name   |False       |
     +----------+------+------------+------------+
-    |avatar_url|string|15522229999 |True        |
+    |avatar_url|string|15522229999 |False       |
     +----------+------+------------+------------+
-    |whats_up  |string|whats_up    |True        |
+    |whats_up  |string|whats_up    |False       |
     +----------+------+------------+------------+
