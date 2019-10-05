@@ -18,9 +18,8 @@ def make_app(debug=True, cookie_secret="233") -> Application:
             (r"/", MainHandler),
             (r"/user/signup", SignupHandler),
             (r"/user/login", LoginHandler),
-            (r"/user/query", QueryUserInfoHandler)(
-                r"/account/surplus", QuerySurplusHandler
-            ),
+            (r"/user/query", QueryUserInfoHandler),
+            (r"/account/surplus", QuerySurplusHandler),
             (r"/account/recharge", RechargeHandler),
         ],
         **settings
