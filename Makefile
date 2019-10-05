@@ -1,5 +1,6 @@
 .PHONY: all lint test docs
 all: lint test docs
+gen: fmt docs
 
 lint:
 	pycodestyle --exclude=venv . --max-line-length=80
@@ -15,3 +16,6 @@ require:
 
 docs:
 	cd docs; make html; cd build/html; touch .nojekyll
+
+table:
+	python ./docs/table/user.py
