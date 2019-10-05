@@ -82,9 +82,25 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">User 接口</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">1. 创建用户</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">接口：</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">传入参数：</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">用户创建</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">接口</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">请求类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">传入参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">返回值</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">用户登录</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">接口</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">请求类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">传入参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">返回值</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">查询用户个人信息</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id12">接口</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">请求类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">传入参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">返回值</a></li>
 </ul>
 </li>
 </ul>
@@ -156,45 +172,180 @@
   <div class="section" id="user">
 <h1>User 接口<a class="headerlink" href="#user" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
-<h2>1. 创建用户<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>用户创建<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id2">
-<h3>接口：<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3>接口<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>/user/signup</p>
 </div>
 <div class="section" id="id3">
-<h3>传入参数：<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<p>mobile: 15522229999</p>
+<h3>请求类型<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>POST</p>
+</div>
+<div class="section" id="id4">
+<h3>传入参数<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 29%" />
-<col style="width: 29%" />
-<col style="width: 41%" />
+<col style="width: 25%" />
+<col style="width: 15%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"></th>
-<th class="head"></th>
-<th class="head"></th>
+<tr class="row-odd"><th class="head"><p>name</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>e.g.</p></th>
+<th class="head"><p>is_necessary</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>False</p></td>
-<td><p>False</p></td>
-<td><p>False</p></td>
-</tr>
-<tr class="row-odd"><td><p>True</p></td>
-<td><p>False</p></td>
-<td><p>False</p></td>
-</tr>
-<tr class="row-even"><td><p>False</p></td>
+<tr class="row-even"><td><p>mobile</p></td>
+<td><p>string</p></td>
+<td><p>15522229999</p></td>
 <td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p>password</p></td>
+<td><p>string</p></td>
+<td><p>password123*</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-even"><td><p>username</p></td>
+<td><p>string</p></td>
+<td><p>user_name</p></td>
 <td><p>False</p></td>
 </tr>
-<tr class="row-odd"><td><p>True</p></td>
+<tr class="row-odd"><td><p>nick_name</p></td>
+<td><p>string</p></td>
+<td><p>nick_name</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-even"><td><p>avatar_url</p></td>
+<td><p>string</p></td>
+<td><p>15522229999</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-odd"><td><p>whats_up</p></td>
+<td><p>string</p></td>
+<td><p>whats_up</p></td>
+<td><p>False</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id5">
+<h3>返回值<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>成功：</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="nt">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="s2">&quot;null&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>失败：</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+    <span class="nt">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;这里会有具体的失败原因&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="kc">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>用户登录<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>接口<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>/user/login</p>
+</div>
+<div class="section" id="id8">
+<h3>请求类型<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>POST</p>
+</div>
+<div class="section" id="id9">
+<h3>传入参数<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 15%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>name</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>e.g.</p></th>
+<th class="head"><p>is_necessary</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>mobile</p></td>
+<td><p>string</p></td>
+<td><p>15522229999</p></td>
 <td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p>password</p></td>
+<td><p>string</p></td>
+<td><p>password123*</p></td>
 <td><p>True</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="id10">
+<h3>返回值<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="nt">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="s2">&quot;null&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>失败：</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+    <span class="nt">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;这里会有具体的失败原因&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="kc">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>查询用户个人信息<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id12">
+<h3>接口<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>/user/query</p>
+</div>
+<div class="section" id="id13">
+<h3>请求类型<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>POST</p>
+</div>
+<div class="section" id="id14">
+<h3>传入参数<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<p>无（从cookie中获取用户信息）</p>
+</div>
+<div class="section" id="id15">
+<h3>返回值<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="nt">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;mobile&quot;</span><span class="p">:</span><span class="s2">&quot;155111116666&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;surplus&quot;</span><span class="p">:</span><span class="mf">233.33</span><span class="p">,</span>
+        <span class="nt">&quot;nick_name&quot;</span><span class="p">:</span><span class="s2">&quot;大河萌虎&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;whats_up&quot;</span><span class="p">:</span><span class="s2">&quot;想加入多抓鱼&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>失败：</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+    <span class="nt">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;这里会有具体的失败原因&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="kc">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
