@@ -14,12 +14,8 @@ jobs:
   include:
     - stage: deploy
       deploy:
-        python:
-          - "3.7"
-        install:
-          - pip install -r requirements.txt
-        script:
-          - make docs
+        python: 3.7
+        script: make docs
         provider: pages
         skip-cleanup: true
         local_dir: docs/build/html
