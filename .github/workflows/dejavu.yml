@@ -18,6 +18,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+        apt-get install python3-sphinx
         pip install -r requirements.txt
     - name: Lint with pycodestyle
       run: |
@@ -34,4 +35,4 @@ jobs:
         BASE_BRANCH: master # The branch the action should deploy from.
         BRANCH: gh-pages # The branch the action should deploy to.
         FOLDER: docs/build/html # The folder the action should deploy.
-        BUILD_SCRIPT: cd docs; make html; cd build/html; touch .nojekyll
+        BUILD_SCRIPT: make gen
