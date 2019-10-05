@@ -3,13 +3,12 @@ name: dejavu
 on: [push, pull_request]
 
 jobs:
-  build:
-
+  build-and-deploy:
     runs-on: ubuntu-18.04
     strategy:
       max-parallel: 4
       matrix:
-        python: [3.6, 3.7]
+        python: [3.7]
     steps:
     - uses: actions/checkout@v1
     - name: Set up Python 3.7
@@ -28,3 +27,11 @@ jobs:
       run: |
         pip install pytest
         python -m pytest test
+    - name: Build and Deploy docs
+      uses: JamesIves/github-pages-deploy-action@master
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BASE_BRANCH: master # The branch the action should deploy from.
+        BRANCH: gh-pages # The branch the action should deploy to.
+        FOLDER: ./docs/build/html # The folder the action should deploy.
+        BUILD_SCRIPT: cd docs; make html; cd build/html; touch .nojekyll
