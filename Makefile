@@ -1,4 +1,4 @@
-.PHONY: all lint test docs
+.PHONY: all lint test docs install
 all: lint test docs
 gen: fmt table docs
 
@@ -19,3 +19,6 @@ docs:
 
 table:
 	python ./docs/table/user.py
+
+install:
+	pip install -r requirements.txt

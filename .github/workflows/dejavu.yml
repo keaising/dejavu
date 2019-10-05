@@ -35,4 +35,4 @@ jobs:
         BASE_BRANCH: master # The branch the action should deploy from.
         BRANCH: gh-pages # The branch the action should deploy to.
         FOLDER: docs/build/html # The folder the action should deploy.
-        BUILD_SCRIPT: make gen
+        BUILD_SCRIPT: make install gen
