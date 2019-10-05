@@ -1,7 +1,11 @@
 import tornado.ioloop
 from tornado.web import Application
 from src.handler.base import MainHandler
-from src.handler.profile import SignupHandler, LoginHandler
+from src.handler.profile import (
+    SignupHandler,
+    LoginHandler,
+    QueryUserInfoHandler,
+)
 from src.handler.account import QuerySurplusHandler, RechargeHandler
 from src.dal.base import init_db
 
@@ -14,8 +18,10 @@ def make_app(debug=True, cookie_secret="233") -> Application:
             (r"/", MainHandler),
             (r"/user/signup", SignupHandler),
             (r"/user/login", LoginHandler),
-            (r"/user/surplus", QuerySurplusHandler),
-            (r"/user/recharge", RechargeHandler),
+            (r"/user/query", QueryUserInfoHandler)(
+                r"/account/surplus", QuerySurplusHandler
+            ),
+            (r"/account/recharge", RechargeHandler),
         ],
         **settings
     )

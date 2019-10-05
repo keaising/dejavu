@@ -1,5 +1,4 @@
 from sqlalchemy import Column, DECIMAL, String
-from src.common.hash import generate_random_string, encrypt_password
 
 from src.dal.base import Base
 
