@@ -14,4 +14,4 @@ require:
 	pip freeze > requirements.txt
 
 docs:
-	cd docs; make html
+	cd docs; make html; cd build/html; touch .nojekyll
