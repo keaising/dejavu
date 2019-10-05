@@ -1,5 +1,5 @@
-.PHONY: all lint test
-all: lint test
+.PHONY: all lint test docs
+all: lint test docs
 
 lint:
 	pycodestyle --exclude=venv . --max-line-length=80
@@ -12,3 +12,6 @@ fmt:
 
 require:
 	pip freeze > requirements.txt
+
+docs:
+	cd docs; make html
