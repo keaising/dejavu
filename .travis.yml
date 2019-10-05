@@ -7,13 +7,12 @@ python:
 install:
   - pip install -r requirements.txt
 
-script:
-  - make
-
 jobs:
   include:
-    - stage: make
-      script: make
+    - stage: test
+      script: make lint test
+    - stage: docs
+      script: make docs
     - stage: deploy
       deploy:
         provider: pages
