@@ -83,10 +83,23 @@
               <p class="caption"><span class="caption-text">简介:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">开发介绍</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">1. 产品需求完成情况</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id13">2. 功能实现</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id14">3. 时间花费</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id15">4. 项目亮点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">一、 产品需求完成情况</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id13">二、 技术需求完成情况</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tornado-sqlalchemy-orm">1. 使用 Tornado 作为应用框架, SQLAlchemy 作为 ORM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#python-3-pep-8">2. 使用 Python 3，符合 PEP-8</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#restful">3. 接口文档，遵循 RESTful</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">4. 带有单元测试/集成测试</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#git">5. 总代码量不用太多，使用 Git 管理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">6. 做好依赖管理</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id17">三、 项目亮点</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id18">1. 产品需求和技术需求基本满足</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">2. 代码清晰、文档完善</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ci-cd-makefile">3. 在要求之外使用了 CI/CD/Makefile</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id23">四、 时间花费情况</a></li>
 </ul>
 </li>
 </ul>
@@ -165,7 +178,7 @@
   <div class="section" id="id1">
 <h1>开发介绍<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
-<h2>1. 产品需求完成情况<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>一、 产品需求完成情况<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p>用户信息添加获取：</p>
 <blockquote>
@@ -189,7 +202,7 @@
 <div><ul class="simple">
 <li><p>把书放入购物车，可以从购物车删除【完成】 <a class="reference external" href="/dejavu/interface/cart.html#id6">添加到购物车、从购物车删除</a></p></li>
 <li><p>从购物车中的部分或全部图书生成订单【完成】 <a class="reference external" href="/dejavu/interface/order.html#id2">创建订单</a></p></li>
-<li><p>填写收货地址，使用余额支付订单【完成】 <a class="reference external" href="/dejavu/interface/address.html">新增收货地址</a>  <a class="reference external" href="/dejavu/interface/order.html#id6">支付订单</a></p></li>
+<li><p>填写收货地址，使用余额支付订单【完成】 <a class="reference external" href="/dejavu/interface/address.html">新增收货地址</a> 、<a class="reference external" href="/dejavu/interface/order.html#id6">支付订单</a></p></li>
 <li><p>订单可以取消【完成】 <a class="reference external" href="/dejavu/interface/order.html#id11">取消订单</a></p></li>
 </ul>
 </div></blockquote>
@@ -197,13 +210,144 @@
 </ol>
 </div>
 <div class="section" id="id13">
-<h2>2. 功能实现<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<h2>二、 技术需求完成情况<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="tornado-sqlalchemy-orm">
+<h3>1. 使用 Tornado 作为应用框架, SQLAlchemy 作为 ORM<a class="headerlink" href="#tornado-sqlalchemy-orm" title="Permalink to this headline">¶</a></h3>
+<p>完成</p>
 </div>
-<div class="section" id="id14">
-<h2>3. 时间花费<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="python-3-pep-8">
+<h3>2. 使用 Python 3，符合 PEP-8<a class="headerlink" href="#python-3-pep-8" title="Permalink to this headline">¶</a></h3>
+<p>完成</p>
+<blockquote>
+<div><p>使用 black 做代码格式化、使用 pycodestyle 做代码检查</p>
+<p>格式化代码： <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">fmt</span></code></p>
+<p>代码检查： <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">lint</span></code></p>
+</div></blockquote>
+</div>
+<div class="section" id="restful">
+<h3>3. 接口文档，遵循 RESTful<a class="headerlink" href="#restful" title="Permalink to this headline">¶</a></h3>
+<p>完成</p>
+<blockquote>
+<div><p>所有的接口都有对应的文档，接口文档详见 <a class="reference external" href="/dejavu/interface/user">接口文档</a></p>
+</div></blockquote>
 </div>
 <div class="section" id="id15">
-<h2>4. 项目亮点<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<h3>4. 带有单元测试/集成测试<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>部分完成</p>
+<blockquote>
+<div><p>基于 table driven test 的思路，目前只完成了用户创建和登录部分的单元测试和集成测试</p>
+<p>但是整个测试框架和思路已经比较完善，后续只需要继续增加其他部分的单元测试和集成测试代码即可</p>
+<p>使用 pytest 运行整个测试项目， 运行 <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">test</span></code> 即可运行所有测试</p>
+</div></blockquote>
+</div>
+<div class="section" id="git">
+<h3>5. 总代码量不用太多，使用 Git 管理<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h3>
+<p>完成</p>
+<blockquote>
+<div><p>项目在 GitHub 上，由于是一个人开发，没有使用多分支、issue/pr 的模式，代码都在 master 分支，文档在 gh-pages 分支</p>
+<p>使用 <a class="reference external" href="https://travis-ci.org/keaising/dejavu">Travis CI</a> 保证项目在 Python3.6/3.7 下的能通过 pycodestyle 的检查、并能通过全部单元测试、集成测试</p>
+<p>使用 <a class="reference external" href="https://github.com/keaising/dejavu/actions">GitHub Action</a> 自动测试、自动编译文档并部署</p>
+</div></blockquote>
+</div>
+<div class="section" id="id16">
+<h3>6. 做好依赖管理<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p>完成</p>
+<blockquote>
+<div><p>使用 pip 自带的 freeze 功能将项目依赖都管理到 requirement.txt 文件中</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id17">
+<h2>三、 项目亮点<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id18">
+<h3>1. 产品需求和技术需求基本满足<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<p>只花了不到 6 天时间完成了</p>
+<ul class="simple">
+<li><p>Tornado/SQLAlchemy 的学习</p></li>
+<li><p>测试框架的选择和学习</p></li>
+<li><p>项目基础框架搭建</p></li>
+<li><p>文档工具选型（选择了比较成熟的 Sphinx + GitHub Pages）</p></li>
+<li><p>CI/CD 的配置和调试</p></li>
+<li><p>编写业务代码、测试代码</p></li>
+</ul>
+<p>虽然还有一部分单元测试和集成测试有待完善，但是总体功能完成</p>
+</div>
+<div class="section" id="id19">
+<h3>2. 代码清晰、文档完善<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>代码</dt><dd><ul>
+<li><p>项目代码在 <code class="docutils literal notranslate"><span class="pre">src</span></code> 目录</p></li>
+<li><p>参考了其他 Tornado 项目的结构划分为 dalmodelhandler 三个模块</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>dal 为数据访问层，不包含业务代码，方便mock和测试</p></li>
+<li><p>model 为 SQLAlchemy 的 Table 层，不包含业务代码</p></li>
+<li><p>handler 为业务层，由于业务逻辑实现得比较简略，没有继续抽象和分层，只是将部分可以共用的方法抽离出来成 module 方法共用，在项目足够复杂的情况下可以继续抽象和使用 DDD 进行设计和规划</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>基于 table driven test 的思路编写了测试代码，测试代码在 <code class="docutils literal notranslate"><span class="pre">test</span></code> 目录</p></li>
+<li><p>单元测试主要是针对业务流程无关的函数，集成测试主要是针对业务流程进行</p></li>
+</ul>
+</dd>
+<dt>文档</dt><dd><ul>
+<li><p>文档代码在 <code class="docutils literal notranslate"><span class="pre">docs</span></code> 目录</p></li>
+<li><p>所有接口都有相应的接口，接口都写明了接口名、请求类型、所需参数和返回值等信息</p></li>
+<li><p>文档工具选择了 Sphinx + GitHub Pages，没有选择我更熟悉的 Swagger，原因如下：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>暂时没有闲置的服务器可以把 Swagger Host起来，面试官不一定会运行代码看文档</p></li>
+<li><p>搜到的很多 Python 文档都使用 Sphinx，广泛使用的东西即便是有坑、能找到解决方案的可能性也比较大，况且它还开源，方便在有需要的时候自己魔改</p></li>
+<li><p>生成的文档是静态文件，可以直接放到 GitHub Pages 上，不运行代码也能看到</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>文档通过 <a class="reference external" href="https://github.com/keaising/dejavu/actions">GitHub Action</a> 持续部署到 <a class="reference external" href="https://shuxiao.wang/dejavu">dejavu-homework</a></p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="ci-cd-makefile">
+<h3>3. 在要求之外使用了 CI/CD/Makefile<a class="headerlink" href="#ci-cd-makefile" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>初衷</dt><dd><p>节省时间、提高开发效率，还可以减少人为失误</p>
+</dd>
+<dt>选型</dt><dd><p>选择 <a class="reference external" href="https://travis-ci.org/keaising/dejavu">Travis CI</a> 运行 lint 和 test，因为它文档完善、社区活跃、用户比较多、而且我已经有在其他项目里使用过一年多，配置简单、服务稳定</p>
+<p>出于学习和尝鲜的目的使用 <a class="reference external" href="https://github.com/keaising/dejavu/actions">GitHub Action</a> 做文档的自动编译和部署</p>
+<p>Makefile 主要是为了方便自己在本地格式化代码、运行单元测试，同时 CI/CD 也可以直接引用</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="id23">
+<h2>四、 时间花费情况<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h2>
+<p>认真开始投入到这个项目是 2019.10.01 晚上，之前只是初步浏览了一下 Tornado 的文档</p>
+<dl>
+<dt>10.01</dt><dd><p>照着 Tornado/SQLAlchemy 教程搭建起项目框架，跑通了第一个 hello world 和数据库</p>
+</dd>
+<dt>10.02</dt><dd><p>完成了用户注册和登录的第一版代码，但是没有想明白到底要怎么测试</p>
+<p>遇到的问题：异步代码测试</p>
+<p>完成了：引入 black/pycodestyle 不用关心 PEP8 的问题了，部署好 Travis CI</p>
+</dd>
+<dt>10.03</dt><dd><p>查了一天资料，读了很多别人的代码</p>
+<p>读了更多关于 Tornado 的资料</p>
+<p>搞明白了异步代码要怎么测试</p>
+</dd>
+<dt>10.04</dt><dd><p>继续修改集成测试</p>
+<p>修改 GitHub Action 的配置</p>
+<p>完成了：用户注册和登录、账户充值和查询</p>
+</dd>
+<dt>10.05</dt><dd><p>文档调研、试用和配置，选择了 Sphinx，学习 reStructuredText 语法</p>
+<p>找了个小工具 pytablewriter 自动生成 reStructuredText 的表格，并配置到 Makefile</p>
+<p>编写了用户注册和登录、账户充值和查询的文档</p>
+<p>写了一部分图书相关的业务代码</p>
+</dd>
+<dt>10.06</dt><dd><p>完成图书相关的业务代码</p>
+<p>完成订单的业务代码</p>
+<p>编写所有接口的文档</p>
+<p>撰写本说明</p>
+</dd>
+</dl>
 </div>
 </div>
 
