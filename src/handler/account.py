@@ -10,7 +10,7 @@ from src.dal.account import get_account_by_mobile, recharge
 class QuerySurplusHandler(BaseHandler):
     """ 查询用户账户余额 """
 
-    def post(self):
+    def get(self):
         try:
             user = self.get_current_user()
             s = Session()
