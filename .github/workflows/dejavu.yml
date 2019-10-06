@@ -23,7 +23,7 @@ jobs:
         pip install -U sphinx
 
     - name: Lint with pycodestyle
-      run: pycodestyle --exclude=venv .
+      run: pycodestyle --exclude=venv . --max-line-length=80
 
     - name: Test with pytest
       run: python -m pytest test
