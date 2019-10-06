@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>图书/Book 接口 &mdash; dejavu-homework  documentation</title>
+  <title>购物车/Cart 接口 &mdash; dejavu-homework  documentation</title>
   
 
   
@@ -35,8 +35,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="购物车/Cart 接口" href="cart.html" />
-    <link rel="prev" title="账户/Account 接口" href="account.html" /> 
+    <link rel="prev" title="图书/Book 接口" href="book.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -84,24 +83,31 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="user.html">用户/User 接口</a></li>
 <li class="toctree-l1"><a class="reference internal" href="account.html">账户/Account 接口</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">图书/Book 接口</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">根据类型查询列表</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="book.html">图书/Book 接口</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">购物车/Cart 接口</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">查询特定用户购物车</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id2">接口</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id3">请求类型</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id4">传入参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id5">返回值</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id">根据图书ID查询单本图书</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id6">接口</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">请求类型</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">传入参数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id9">返回值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">添加到购物车</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">接口</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">请求类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">传入参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">返回值</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">从购物车删除</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id12">接口</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">请求类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">传入参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">返回值</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="cart.html">购物车/Cart 接口</a></li>
 </ul>
 
             
@@ -147,13 +153,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>图书/Book 接口</li>
+      <li>购物车/Cart 接口</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/book.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/cart.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -166,13 +172,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="book">
-<h1>图书/Book 接口<a class="headerlink" href="#book" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="cart">
+<h1>购物车/Cart 接口<a class="headerlink" href="#cart" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
-<h2>根据类型查询列表<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>查询特定用户购物车<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id2">
 <h3>接口<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<p>/book/get_by_category</p>
+<p>/cart/query</p>
 </div>
 <div class="section" id="id3">
 <h3>请求类型<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
@@ -180,28 +186,7 @@
 </div>
 <div class="section" id="id4">
 <h3>传入参数<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 24%" />
-<col style="width: 17%" />
-<col style="width: 29%" />
-<col style="width: 29%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>name</p></th>
-<th class="head"><p>type</p></th>
-<th class="head"><p>e.g.</p></th>
-<th class="head"><p>is_necessary</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>category</p></td>
-<td><p>string</p></td>
-<td><p>story</p></td>
-<td><p>True</p></td>
-</tr>
-</tbody>
-</table>
+<p>无（从cookie中获取用户信息）</p>
 </div>
 <div class="section" id="id5">
 <h3>返回值<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
@@ -211,14 +196,10 @@
     <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
             <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;SSH, The Secure Shell&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;Daniel J. Barrett&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mf">44.99</span><span class="p">,</span>
-            <span class="nt">&quot;surface_url&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;press&quot;</span><span class="p">:</span> <span class="s2">&quot;O&#39;Reilly Media&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;introduction&quot;</span><span class="p">:</span> <span class="s2">&quot;Are you serious about network security? &quot;</span><span class="p">,</span>
-            <span class="nt">&quot;toc&quot;</span><span class="p">:</span> <span class="s2">&quot;Chapter 1 Introduction to SSH&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;category&quot;</span><span class="p">:</span> <span class="s2">&quot;ssh&quot;</span>
+            <span class="nt">&quot;mobile&quot;</span><span class="p">:</span> <span class="s2">&quot;15511118888&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;book_id&quot;</span><span class="p">:</span> <span class="s2">&quot;233&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;count&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">&quot;add_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-10-06T17:12:40&quot;</span><span class="p">,</span>
         <span class="p">}</span>
     <span class="p">]</span>
 <span class="p">}</span>
@@ -234,18 +215,18 @@
 </div>
 </div>
 </div>
-<div class="section" id="id">
-<h2>根据图书ID查询单本图书<a class="headerlink" href="#id" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id6">
-<h3>接口<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
-<p>/book/get_by_id</p>
-</div>
+<h2>添加到购物车<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id7">
-<h3>请求类型<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<p>POST</p>
+<h3>接口<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>/cart/add</p>
 </div>
 <div class="section" id="id8">
-<h3>传入参数<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<h3>请求类型<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>POST</p>
+</div>
+<div class="section" id="id9">
+<h3>传入参数<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 24%" />
@@ -262,29 +243,78 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>book_id</p></td>
-<td><p>string</p></td>
-<td><p>233</p></td>
+<td><p>int</p></td>
+<td><p>1</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p>count</p></td>
+<td><p>int</p></td>
+<td><p>1</p></td>
 <td><p>True</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="section" id="id9">
-<h3>返回值<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id10">
+<h3>返回值<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
     <span class="nt">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;SSH, The Secure Shell&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;Daniel J. Barrett&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mf">44.99</span><span class="p">,</span>
-        <span class="nt">&quot;surface_url&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;press&quot;</span><span class="p">:</span> <span class="s2">&quot;O&#39;Reilly Media&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;introduction&quot;</span><span class="p">:</span> <span class="s2">&quot;Are you serious about network security? &quot;</span><span class="p">,</span>
-        <span class="nt">&quot;toc&quot;</span><span class="p">:</span> <span class="s2">&quot;Chapter 1 Introduction to SSH&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;category&quot;</span><span class="p">:</span> <span class="s2">&quot;ssh&quot;</span>
-    <span class="p">}</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="kc">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>失败：</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+    <span class="nt">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;这里会有具体的失败原因&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="kc">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>从购物车删除<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id12">
+<h3>接口<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>/cart/delete</p>
+</div>
+<div class="section" id="id13">
+<h3>请求类型<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>POST</p>
+</div>
+<div class="section" id="id14">
+<h3>传入参数<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 17%" />
+<col style="width: 29%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>name</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>e.g.</p></th>
+<th class="head"><p>is_necessary</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>book_id</p></td>
+<td><p>int</p></td>
+<td><p>1</p></td>
+<td><p>True</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id15">
+<h3>返回值<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="nt">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="kc">null</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -308,10 +338,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="cart.html" class="btn btn-neutral float-right" title="购物车/Cart 接口" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="account.html" class="btn btn-neutral float-left" title="账户/Account 接口" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="book.html" class="btn btn-neutral float-left" title="图书/Book 接口" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
