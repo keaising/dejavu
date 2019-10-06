@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -9,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; dejavu-homework  documentation</title>
+  <title>账户/Account 接口 &mdash; dejavu-homework  documentation</title>
   
 
   
@@ -34,7 +33,7 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="#" />
+    <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" /> 
 </head>
 
@@ -127,12 +126,14 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Index</li>
+      <li>账户/Account 接口</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
+            <a href="_sources/account.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -144,11 +145,44 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="section" id="account">
+<h1>账户/Account 接口<a class="headerlink" href="#account" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>查询用户账户余额<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>接口<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>/account/surplus</p>
+</div>
+<div class="section" id="id3">
+<h3>请求类型<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>GET</p>
+</div>
+<div class="section" id="id4">
+<h3>传入参数<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>无（从cookie中获取用户信息）</p>
+</div>
+<div class="section" id="id5">
+<h3>返回值<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="nt">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;mobile&quot;</span><span class="p">:</span><span class="s2">&quot;155111116666&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;surplus&quot;</span><span class="p">:</span><span class="mf">233.33</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>失败：</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+    <span class="nt">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;这里会有具体的失败原因&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="kc">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 
 
