@@ -8,9 +8,15 @@ Welcome to dejavu-homework's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: 简介:
 
-   user
-   account
-   book
-   cart
+   intro.rst
+
+.. toctree::
+   :maxdepth: 2
+   :caption: 接口文档:
+
+   interface/user
+   interface/account
+   interface/book
+   interface/cart
