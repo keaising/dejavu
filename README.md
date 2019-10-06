@@ -8,6 +8,19 @@ I've seen this before.
 
 ---------------------------------------
 
+## 项目文档
+
+文档地址：[shuxiao.wang/dejavu](https://shuxiao.wang/dejavu)
+
+文档中包含以下内容：
+
++ 本项目的开发情况
++ 产品需求实现
++ 技术方案使用
++ 项目亮点
++ 待改进的内容和不足
++ 未来展望
+
 总需求 实现书店系统必要的 API
 
 #### 产品需求
@@ -42,14 +55,4 @@ I've seen this before.
 5. 总代码量不用太多，使用 Git 管理
 
 6. 做好依赖管理
-
----------------------------------------
-
-开发情况
-
-- [x] Git 管理
-- [x] 使用 Tornado 作为应用框架
-- [x] 符合 PEP-8（Makefile 使用 pycodestyle 做 lint）
-- [ ] SQLAlchemy 作为 ORM
-- [ ] 接口实现
 
