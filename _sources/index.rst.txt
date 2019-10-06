@@ -20,3 +20,4 @@ Welcome to dejavu-homework's documentation!
    interface/account
    interface/book
    interface/cart
+   interface/address
