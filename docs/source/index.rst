@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to dejavu's documentation!
-=======================================
+Welcome to dejavu-homework's documentation!
+===================================================
 
 .. toctree::
    :maxdepth: 2
@@ -13,3 +13,4 @@ Welcome to dejavu's documentation!
    user
    account
    book
+   cart
