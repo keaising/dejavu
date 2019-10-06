@@ -11,4 +11,4 @@ Welcome to dejavu's documentation!
    :caption: Contents:
 
    user
-
+   account
