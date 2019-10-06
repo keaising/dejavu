@@ -1,4 +1,4 @@
-from sqlalchemy import String, Column, DECIMAL, Integer
+from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 
 from src.dal.base import Base
 
@@ -6,36 +6,16 @@ from src.dal.base import Base
 class CartModel(Base):
     """购物车信息"""
 
-    __tablename__ = "book"
+    __tablename__ = "cart"
 
-    id = Column(Integer, primary_key=True)
-    name = Column(String)
-    author = Column(String)
-    price = Column(DECIMAL)  # 价格
-    surface_url = Column(String)  # 封面图
-    press = Column(String)  # 出版社
-    introduction = Column(String)  # 简介
-    toc = Column(String)  # 目录
-    category = Column(String)  # 类型
+    cart_id = Column(Integer, primary_key=True)
+    mobile = Column(String, ForeignKey("profile.mobile"))
+    book_id = Column(Integer, ForeignKey("book.book_id"))
+    count = Column(Integer)
+    add_date = Column(DateTime)  # 添加到购物车的时间
 
-    def __init__(
-        self,
-        id,
-        name,
-        price,
-        author,
-        surface_url="",
-        press="",
-        introduction="",
-        toc="",
-        category="",
-    ):
-        self.id = id
-        self.name = name
-        self.price = price
-        self.author = author
-        self.surface_url = surface_url
-        self.press = press
-        self.introduction = introduction
-        self.toc = toc
-        self.category = category
+    def __init__(self, mobile, book_id, count, add_date):
+        self.mobile = (mobile,)
+        self.book_id = book_id
+        self.count = (count,)
+        self.add_date = add_date

@@ -7,7 +7,7 @@ class BookModel(Base):
 
     __tablename__ = "book"
 
-    id = Column(Integer, primary_key=True)
+    book_id = Column(Integer, primary_key=True)
     name = Column(String)
     author = Column(String)
     price = Column(DECIMAL)  # 价格
@@ -19,7 +19,6 @@ class BookModel(Base):
 
     def __init__(
         self,
-        id,
         name,
         price,
         author,
@@ -29,7 +28,6 @@ class BookModel(Base):
         toc="",
         category="",
     ):
-        self.id = id
         self.name = name
         self.price = price
         self.author = author
@@ -41,10 +39,10 @@ class BookModel(Base):
 
     def __repr__(self):
         return (
-            "<Profile(id='{}', name='{}', price='{}', "
+            "<Profile(book_id='{}', name='{}', price='{}', "
             "author='{}', surface_url='{}', press='{}', "
             "introduction='{}, toc='{}', category='{}')>".format(
-                self.id,
+                self.book_id,
                 self.name,
                 self.price,
                 self.author,

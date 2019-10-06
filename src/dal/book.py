@@ -19,4 +19,4 @@ def get_book_by_id(session: Session, book_id: str) -> BookModel:
     :param book_id: 图书类型
     :return: BookModel
     """
-    return session.query(BookModel).filter(BookModel.id == id).first()
+    return session.query(BookModel).filter(BookModel.book_id == book_id).first()
