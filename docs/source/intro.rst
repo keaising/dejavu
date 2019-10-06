@@ -6,21 +6,21 @@
 
 1. 用户信息添加获取：
 
-    + 通过手机号密码注册和登录【完成】  `用户注册和登录 </interface/user>`_
-    + 查看个人信息，购买历史，余额等【完成】 `用户查询 </interface/user.html#id11>`_
-    + 可以充值余额，实现一个假的就好【完成】 `账户充值 </interface/account.html#id6>`_
+    + 通过手机号密码注册和登录【完成】  `用户注册和登录 </dejavu/interface/user>`_
+    + 查看个人信息，购买历史，余额等【完成】 `用户查询 </dejavu/interface/user.html#id11>`_
+    + 可以充值余额，实现一个假的就好【完成】 `账户充值 </dejavu/interface/account.html#id6>`_
 
 2. 用户可以查看图书信息：
 
-    + 获取图书列表，展示书名，作者，价格等【完成】  `获取图书列表 </html/interface/book>`_
-    + 获取图书详情，除展示列表中已有信息之外，还需要简介，目录等【完成】  `获取图书详情 </interface/book.html#id>`_
+    + 获取图书列表，展示书名，作者，价格等【完成】  `获取图书列表 </dejavu/interface/book>`_
+    + 获取图书详情，除展示列表中已有信息之外，还需要简介，目录等【完成】  `获取图书详情 </dejavu/interface/book.html#id>`_
 
 3. 用户可以购买图书：
 
-    + 把书放入购物车，可以从购物车删除【完成】 `添加到购物车、从购物车删除 </interface/cart.html#id6>`_
-    + 从购物车中的部分或全部图书生成订单【完成】 `创建订单 </interface/order.html#id2>`_
-    + 填写收货地址，使用余额支付订单【完成】 `新增收货地址 </interface/address.html>`_  `支付订单 </interface/order.html#id6>`_
-    + 订单可以取消【完成】 `取消订单 </interface/order.html#id11>`_
+    + 把书放入购物车，可以从购物车删除【完成】 `添加到购物车、从购物车删除 </dejavu/interface/cart.html#id6>`_
+    + 从购物车中的部分或全部图书生成订单【完成】 `创建订单 </dejavu/interface/order.html#id2>`_
+    + 填写收货地址，使用余额支付订单【完成】 `新增收货地址 </dejavu/interface/address.html>`_  `支付订单 </dejavu/interface/order.html#id6>`_
+    + 订单可以取消【完成】 `取消订单 </dejavu/interface/order.html#id11>`_
 
 2. 功能实现
 *********************
