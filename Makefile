@@ -20,6 +20,8 @@ docs:
 table:
 	python ./docs/table/user.py
 	python ./docs/table/address.py
+	python ./docs/table/order.py
+	python ./docs/table/order2.py
 
 install:
 	pip install -r requirements.txt
