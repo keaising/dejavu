@@ -19,6 +19,7 @@ docs:
 
 table:
 	python ./docs/table/user.py
+	python ./docs/table/address.py
 
 install:
 	pip install -r requirements.txt
