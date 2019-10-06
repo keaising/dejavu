@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, DECIMAL
+from sqlalchemy import Column, String, DECIMAL, Integer
 from src.dal.base import Base
 
 
@@ -7,7 +7,7 @@ class BookModel(Base):
 
     __tablename__ = "book"
 
-    id = Column(String, primary_key=True)
+    id = Column(Integer, primary_key=True)
     name = Column(String)
     author = Column(String)
     price = Column(DECIMAL)  # 价格

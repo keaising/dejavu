@@ -7,6 +7,7 @@ from src.handler.profile import (
     QueryUserInfoHandler,
 )
 from src.handler.account import QuerySurplusHandler, RechargeHandler
+from src.handler.book import QueryBookHandler, QueryBookListHandler
 from src.dal.base import init_db
 
 
@@ -21,6 +22,8 @@ def make_app(debug=True, cookie_secret="233") -> Application:
             (r"/user/query", QueryUserInfoHandler),
             (r"/account/surplus", QuerySurplusHandler),
             (r"/account/recharge", RechargeHandler),
+            (r"/book/get_by_category", QueryBookListHandler),
+            (r"/book/get_by_id", QueryBookHandler),
         ],
         **settings
     )

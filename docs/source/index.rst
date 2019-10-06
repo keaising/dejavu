@@ -12,3 +12,4 @@ Welcome to dejavu's documentation!
 
    user
    account
+   book

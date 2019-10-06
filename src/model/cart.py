@@ -1,0 +1,41 @@
+from sqlalchemy import String, Column, DECIMAL, Integer
+
+from src.dal.base import Base
+
+
+class CartModel(Base):
+    """购物车信息"""
+
+    __tablename__ = "book"
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    author = Column(String)
+    price = Column(DECIMAL)  # 价格
+    surface_url = Column(String)  # 封面图
+    press = Column(String)  # 出版社
+    introduction = Column(String)  # 简介
+    toc = Column(String)  # 目录
+    category = Column(String)  # 类型
+
+    def __init__(
+        self,
+        id,
+        name,
+        price,
+        author,
+        surface_url="",
+        press="",
+        introduction="",
+        toc="",
+        category="",
+    ):
+        self.id = id
+        self.name = name
+        self.price = price
+        self.author = author
+        self.surface_url = surface_url
+        self.press = press
+        self.introduction = introduction
+        self.toc = toc
+        self.category = category

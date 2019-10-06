@@ -68,7 +68,7 @@ class QueryUserInfoHandler(BaseHandler):
     """查询用户个人信息"""
 
     @authenticated
-    def get(self):
+    def post(self):
         try:
             mobile = self.get_current_user()
             s = Session()
