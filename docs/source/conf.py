@@ -51,4 +51,4 @@ html_theme = "sphinx_rtd_theme"
 html_static_path = ["static"]
 
 html_baseurl = "dejavu"
-html_favicon = "favicon.png"
+html_favicon = "favicon.ico"
