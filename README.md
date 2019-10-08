@@ -10,7 +10,7 @@ I've seen this before.
 
 ## 项目文档
 
-文档地址：[dejavu.shuxiao.wang](https://dejavu.shuxiao.wang)
+文档地址：[shuxiao.wang/dejavu](https://shuxiao.wang/dejavu)
 
 文档中包含以下内容：
 
