@@ -6,20 +6,20 @@
 
 1. 用户信息添加获取：
 
-    + 通过手机号密码注册和登录【完成】  `用户注册和登录 </interface/user>`_
-    + 查看个人信息，购买历史，余额等【完成】 `用户查询 </interface/user.html#id11>`_
-    + 可以充值余额，实现一个假的就好【完成】 `账户充值 </interface/account.html#id6>`_
+    + 通过手机号密码注册和登录【完成】  `用户注册和登录 </dejavu/interface/user>`_
+    + 查看个人信息，购买历史，余额等【完成】 `用户查询 </dejavu/interface/user.html#id11>`_
+    + 可以充值余额，实现一个假的就好【完成】 `账户充值 </dejavu/interface/account.html#id6>`_
 
 2. 用户可以查看图书信息：
 
     + 获取图书列表，展示书名，作者，价格等【完成】  `获取图书列表 </dejavu/interface/book>`_
-    + 获取图书详情，除展示列表中已有信息之外，还需要简介，目录等【完成】  `获取图书详情 </interface/book.html#id>`_
+    + 获取图书详情，除展示列表中已有信息之外，还需要简介，目录等【完成】  `获取图书详情 </dejavu/interface/book.html#id>`_
 
 3. 用户可以购买图书：
 
-    + 把书放入购物车，可以从购物车删除【完成】 `添加到购物车、从购物车删除 </interface/cart.html#id6>`_
-    + 从购物车中的部分或全部图书生成订单【完成】 `创建订单 </interface/order.html#id2>`_
-    + 填写收货地址，使用余额支付订单【完成】 `新增收货地址 </interface/address.html>`_ 、`支付订单 </interface/order.html#id6>`_
+    + 把书放入购物车，可以从购物车删除【完成】 `添加到购物车、从购物车删除 </dejavu/interface/cart.html#id6>`_
+    + 从购物车中的部分或全部图书生成订单【完成】 `创建订单 </dejavu/interface/order.html#id2>`_
+    + 填写收货地址，使用余额支付订单【完成】 `新增收货地址 </dejavu/interface/address.html>`_ 、`支付订单 </dejavu/interface/order.html#id6>`_
     + 订单可以取消【完成】 `取消订单 </dejavu/interface/order.html#id11>`_
 
 二、 技术需求完成情况
@@ -115,7 +115,7 @@
         * 暂时没有闲置的服务器可以把 Swagger Host起来，面试官不一定会运行代码看文档
         * 搜到的很多 Python 文档都使用 Sphinx，广泛使用的东西即便是有坑、能找到解决方案的可能性也比较大，况且它还开源，方便在有需要的时候自己魔改
         * 生成的文档是静态文件，可以直接放到 GitHub Pages 上，不运行代码也能看到
-    + 文档通过 `GitHub Action <https://github.com/keaising/dejavu/actions>`_ 持续部署到 `dejavu-homework <https://dejavu.shuxiao.wang>`_
+    + 文档通过 `GitHub Action <https://github.com/keaising/dejavu/actions>`_ 持续部署到 `dejavu-homework <https://shuxiao.wang/dejavu>`_
 
 3. 在要求之外使用了 CI/CD/Makefile
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
