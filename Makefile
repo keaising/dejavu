@@ -15,7 +15,7 @@ require:
 	pip freeze > requirements.txt
 
 docs:
-	cd docs; make html; cd build/html; touch .nojekyll; echo "eureka.shuxiao.wang" > CNAME
+	cd docs; make html; cd build/html; touch .nojekyll; echo "dejavu.shuxiao.wang" > CNAME
 
 table:
 	python ./docs/table/user.py
